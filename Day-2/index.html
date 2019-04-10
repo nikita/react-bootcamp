@@ -21,7 +21,7 @@
               </li>
             ))}
           </ul>
-        ) 
+        );
       }
       function InactiveFriendsList(props) {
         return (
@@ -34,12 +34,12 @@
               </li>
             ))}
           </ul>
-        ) 
+        );
       }
 
       class App extends React.Component {
         constructor(props) {
-          super(props)
+          super(props);
           
           this.state = {
             ActiveFriends: ['Slava', 'Vadym', 'Victor'],
@@ -64,7 +64,7 @@
                 ActiveFriends: currentState.ActiveFriends.concat([currentState.input]),
                 input: ''
               }
-            })
+            });
           }
         }
 
@@ -74,7 +74,7 @@
               // Keep all items where the friend is not equal to the name passed to handleRemoveActiveFriend.
               ActiveFriends: currentState.ActiveFriends.filter((friend) => friend !== name)
             }
-          })
+          });
         }
         
         handleRemoveInactiveFriend(name) {
@@ -83,7 +83,7 @@
               // Keep all items where the friend is not equal to the name passed to handleRemoveInactiveFriend.
               InactiveFriends: currentState.InactiveFriends.filter((friend) => friend !== name)
             }
-          })
+          });
         }
 
         handleDeactiveFriend(name) {
@@ -94,7 +94,7 @@
               // Add to InactiveFriends.
               InactiveFriends: currentState.InactiveFriends.concat([name])
             }
-          })
+          });
         }
 
         handleActivateFriend(name) {
@@ -105,7 +105,7 @@
               // Add to ActiveFriends.
               ActiveFriends: currentState.ActiveFriends.concat([name])
             }
-          })
+          });
         }
 
         handleClearAll() {
@@ -115,7 +115,7 @@
               InactiveFriends: [],
               input: ''
             }
-          })
+          });
         }
 
         updateInput(e) {
@@ -123,7 +123,7 @@
           
           this.setState({
             input: value
-          })
+          });
         }
 
         render() {
@@ -152,14 +152,14 @@
                 onActivateFriend={this.handleActivateFriend}
               />
             </div>
-          )
+          );
         }
       }
 
       ReactDOM.render(
         <App />,
         document.getElementById('app')
-      )
+      );
     </script>
 </body>
 </html>
